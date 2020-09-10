@@ -1,7 +1,7 @@
-import 'package:flutter_custom_calendar/constants/constants.dart';
-import 'package:flutter_custom_calendar/model/date_model.dart';
-import 'package:flutter_custom_calendar/utils/date_util.dart';
-import 'package:flutter_custom_calendar/utils/solar_term_util.dart';
+import 'package:lunarCalendar/constants/constants.dart';
+import 'package:lunarCalendar/model/date_model.dart';
+import 'package:lunarCalendar/utils/date_util.dart';
+import 'package:lunarCalendar/utils/solar_term_util.dart';
 
 /**
  * 农历的工具类

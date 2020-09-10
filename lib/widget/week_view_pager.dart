@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_custom_calendar/calendar_provider.dart';
-import 'package:flutter_custom_calendar/configuration.dart';
-import 'package:flutter_custom_calendar/controller.dart';
-import 'package:flutter_custom_calendar/model/date_model.dart';
-import 'package:flutter_custom_calendar/utils/LogUtil.dart';
-import 'package:flutter_custom_calendar/widget/week_view.dart';
+import 'package:lunarCalendar/calendar_provider.dart';
+import 'package:lunarCalendar/configuration.dart';
+import 'package:lunarCalendar/controller.dart';
+import 'package:lunarCalendar/model/date_model.dart';
+import 'package:lunarCalendar/utils/LogUtil.dart';
+import 'package:lunarCalendar/widget/week_view.dart';
 import 'package:provider/provider.dart';
 
 class WeekViewPager extends StatefulWidget {
