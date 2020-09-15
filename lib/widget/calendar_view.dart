@@ -1,13 +1,13 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_custom_calendar/calendar_provider.dart';
-import 'package:flutter_custom_calendar/constants/constants.dart';
-import 'package:flutter_custom_calendar/controller.dart';
-import 'package:flutter_custom_calendar/model/date_model.dart';
-import 'package:flutter_custom_calendar/utils/LogUtil.dart';
-import 'package:flutter_custom_calendar/utils/date_util.dart';
-import 'package:flutter_custom_calendar/widget/month_view_pager.dart';
-import 'package:flutter_custom_calendar/widget/week_view_pager.dart';
+import 'package:lunarCalendar/calendar_provider.dart';
+import 'package:lunarCalendar/constants/constants.dart';
+import 'package:lunarCalendar/controller.dart';
+import 'package:lunarCalendar/model/date_model.dart';
+import 'package:lunarCalendar/utils/LogUtil.dart';
+import 'package:lunarCalendar/utils/date_util.dart';
+import 'package:lunarCalendar/widget/month_view_pager.dart';
+import 'package:lunarCalendar/widget/week_view_pager.dart';
 import 'package:provider/provider.dart';
 
 /**
