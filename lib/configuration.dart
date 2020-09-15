@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:lunarCalendar/controller.dart';
-import 'package:lunarCalendar/model/date_model.dart';
+import 'package:flutter_custom_calendar/controller.dart';
+import 'package:flutter_custom_calendar/model/date_model.dart';
 
 /**
  * 配置信息类

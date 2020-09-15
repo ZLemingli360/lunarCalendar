@@ -1,7 +1,7 @@
-import 'package:lunarCalendar/constants/constants.dart';
-import 'package:lunarCalendar/model/date_model.dart';
-import 'package:lunarCalendar/utils/date_util.dart';
-import 'package:lunarCalendar/utils/solar_term_util.dart';
+import 'package:flutter_custom_calendar/constants/constants.dart';
+import 'package:flutter_custom_calendar/model/date_model.dart';
+import 'package:flutter_custom_calendar/utils/date_util.dart';
+import 'package:flutter_custom_calendar/utils/solar_term_util.dart';
 
 /**
  * 农历的工具类
@@ -475,19 +475,19 @@ class LunarUtil {
     "0101元旦",
     "0214情人节",
     "0308妇女节",
-    // "0312植树节",
-    // "0315消权日",
+    "0312植树节",
+    "0315消权日",
     "0401愚人节",
-    // "0422地球日",
+    "0422地球日",
     "0501劳动节",
-    // "0504青年节",
-    // "0601儿童节",
-    // "0701建党节",
-    // "0801建军节",
-    // "0910教师节",
-    // "1001国庆节",
+    "0504青年节",
+    "0601儿童节",
+    "0701建党节",
+    "0801建军节",
+    "0910教师节",
+    "1001国庆节",
     "1031万圣节",
-    // "1111光棍节",
+    "1111光棍节",
     "1224平安夜",
     "1225圣诞节",
   ];

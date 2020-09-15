@@ -1,13 +1,13 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:lunarCalendar/calendar_provider.dart';
-import 'package:lunarCalendar/constants/constants.dart';
-import 'package:lunarCalendar/controller.dart';
-import 'package:lunarCalendar/model/date_model.dart';
-import 'package:lunarCalendar/utils/LogUtil.dart';
-import 'package:lunarCalendar/utils/date_util.dart';
-import 'package:lunarCalendar/widget/month_view_pager.dart';
-import 'package:lunarCalendar/widget/week_view_pager.dart';
+import 'package:flutter_custom_calendar/calendar_provider.dart';
+import 'package:flutter_custom_calendar/constants/constants.dart';
+import 'package:flutter_custom_calendar/controller.dart';
+import 'package:flutter_custom_calendar/model/date_model.dart';
+import 'package:flutter_custom_calendar/utils/LogUtil.dart';
+import 'package:flutter_custom_calendar/utils/date_util.dart';
+import 'package:flutter_custom_calendar/widget/month_view_pager.dart';
+import 'package:flutter_custom_calendar/widget/week_view_pager.dart';
 import 'package:provider/provider.dart';
 
 /**
@@ -16,6 +16,7 @@ import 'package:provider/provider.dart';
 
 //由于旧的代码关系。。所以现在需要抽出一个StatefulWidget放在StatelessWidget里面
 class CalendarViewWidget extends StatefulWidget {
+  double height;
   //整体的背景设置
   BoxDecoration boxDecoration;
 
@@ -132,27 +133,29 @@ class CalendarContainerState extends State<CalendarContainer>
       index = 0;
     }
 
-//    widget.calendarController.addMonthChangeListener((year, month) {
-//      if (widget.calendarController.calendarProvider.calendarConfiguration
-//              .showMode !=
-//          Constants.MODE_SHOW_ONLY_WEEK) {
-//        //月份切换的时候，如果高度发生变化的话，需要setState使高度整体自适应
-//        int lineCount = DateUtil.getMonthViewLineCount(year, month);
-//        double newHeight = itemHeight * lineCount +
-//            calendarProvider.calendarConfiguration.verticalSpacing *
-//                (lineCount - 1);
-//        if (totalHeight.toInt() != newHeight.toInt()) {
-//          LogUtil.log(
-//              TAG: this.runtimeType,
-//              message: "totalHeight:$totalHeight,newHeight:$newHeight");
-//
-//          LogUtil.log(TAG: this.runtimeType, message: "月份视图高度发生变化");
-//          setState(() {
-//            totalHeight = newHeight;
-//          });
-//        }
-//      }
-//    });
+     widget.calendarController.addMonthChangeListener((year, month) {
+       if (widget.calendarController.calendarProvider.calendarConfiguration
+               .showMode !=
+           Constants.MODE_SHOW_ONLY_WEEK) {
+         //月份切换的时候，如果高度发生变化的话，需要setState使高度整体自适应
+         int lineCount = DateUtil.getMonthViewLineCount(year, month);
+         double newHeight = itemHeight * lineCount +
+             calendarProvider.calendarConfiguration.verticalSpacing *
+                 (lineCount - 1);
+         if (totalHeight.toInt() != newHeight.toInt()) {
+           LogUtil.log(
+               TAG: this.runtimeType,
+               message: "totalHeight:$totalHeight,newHeight:$newHeight");
+
+           LogUtil.log(TAG: this.runtimeType, message: "月份视图高度发生变化");
+           print("月份视图高度发生变化");
+           
+           setState(() {
+             totalHeight = newHeight;
+           });
+         }
+       }
+     });
 
     //暂时先这样写死,提前计算布局的高度,不然会出现问题:a horizontal viewport was given an unlimited amount of I/flutter ( 6759): vertical space in which to expand.
 
@@ -168,6 +171,15 @@ class CalendarContainerState extends State<CalendarContainer>
 
     calendarProvider.totalHeight = itemHeight * 6 +
         calendarProvider.calendarConfiguration.verticalSpacing * (6 - 1);
+
+    DateTime dateTime = DateTime.now();
+    int lineCount =
+        DateUtil.getMonthViewLineCount(dateTime.year, dateTime.month);
+    double newHeight = itemHeight * lineCount +
+        calendarProvider.calendarConfiguration.verticalSpacing *
+            (lineCount - 1);
+
+    // totalHeight = newHeight;
     totalHeight = calendarProvider.totalHeight;
   }
 

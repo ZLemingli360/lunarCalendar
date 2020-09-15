@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:lunarCalendar/calendar_provider.dart';
-import 'package:lunarCalendar/configuration.dart';
-import 'package:lunarCalendar/constants/constants.dart';
-import 'package:lunarCalendar/model/date_model.dart';
-import 'package:lunarCalendar/utils/LogUtil.dart';
-import 'package:lunarCalendar/utils/date_util.dart';
-import 'package:lunarCalendar/widget/default_combine_day_view.dart';
-import 'package:lunarCalendar/widget/default_custom_day_view.dart';
-import 'package:lunarCalendar/widget/default_week_bar.dart';
+import 'package:flutter_custom_calendar/calendar_provider.dart';
+import 'package:flutter_custom_calendar/configuration.dart';
+import 'package:flutter_custom_calendar/constants/constants.dart';
+import 'package:flutter_custom_calendar/model/date_model.dart';
+import 'package:flutter_custom_calendar/utils/LogUtil.dart';
+import 'package:flutter_custom_calendar/utils/date_util.dart';
+import 'package:flutter_custom_calendar/widget/default_combine_day_view.dart';
+import 'package:flutter_custom_calendar/widget/default_custom_day_view.dart';
+import 'package:flutter_custom_calendar/widget/default_week_bar.dart';
 
 /**
  * 利用controller来控制视图
@@ -29,6 +29,8 @@ class CalendarController {
   List<DateModel> weekList = new List(); //星期list
   PageController monthController; //月份的controller
   PageController weekController; //星期的controller
+  int selectedMonth;
+  int selectedYear;
 
   CalendarController(
       {int selectMode = Constants.MODE_SINGLE_SELECT,
@@ -409,6 +411,8 @@ class CalendarController {
                 .toInt() +
             1]
         .getDateTime();
+    selectedMonth = targetDateTime.month;
+    selectedYear = targetDateTime.year;
     moveToCalendar(
         targetDateTime.year, targetDateTime.month, targetDateTime.day,
         needAnimation: needAnimation, duration: duration, curve: curve);
@@ -448,6 +452,9 @@ class CalendarController {
                 .toInt() -
             1]
         .getDateTime();
+    selectedMonth = targetDateTime.month;
+    selectedYear = targetDateTime.year;
+
     moveToCalendar(
         targetDateTime.year, targetDateTime.month, targetDateTime.day,
         needAnimation: needAnimation, duration: duration, curve: curve);
@@ -455,6 +462,8 @@ class CalendarController {
 
   // 获取当前的月份
   DateModel getCurrentMonth() {
+    selectedMonth = monthList[monthController.page.toInt()].month;
+    selectedYear = monthList[monthController.page.toInt()].year;
     return monthList[monthController.page.toInt()];
   }
 

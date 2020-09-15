@@ -1,7 +1,7 @@
 import 'dart:core';
 import 'dart:math';
 
-import 'package:lunarCalendar/utils/math_util.dart';
+import 'package:flutter_custom_calendar/utils/math_util.dart';
 
 /**
  * http://www.cnblogs.com/moodlxs/archive/2010/12/18/2345392.html

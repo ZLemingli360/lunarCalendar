@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:lunarCalendar/constants/constants.dart';
-import 'package:lunarCalendar/widget/base_week_bar.dart';
-import 'package:lunarCalendar/style/style.dart';
+import 'package:flutter_custom_calendar/constants/constants.dart';
+import 'package:flutter_custom_calendar/widget/base_week_bar.dart';
+import 'package:flutter_custom_calendar/style/style.dart';
 
 ///**
 // * 顶部的固定的周显示
